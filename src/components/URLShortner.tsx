@@ -10,7 +10,7 @@ const URLShortner = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/shorten-url', {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/shorten-url`, {
         originalURL: originalURL
       });
       setError('')
